@@ -1,0 +1,170 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: white;
+    background-color: hsl(229, 57%, 11%);
+    overflow-x: hidden;
+}
+
+.container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/bg-desktop.png");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.container > div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.left, .right {
+    background-color: hsl(228, 56%, 26%);
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.right {
+    border-radius: 1rem;
+    position: relative;
+    width: 400px;
+}
+
+.left {
+    padding: 3rem;
+    border-radius: 1rem;
+    border-top-right-radius: 8rem;
+}
+
+.left > .heading {
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+}
+
+.btnContainer {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btnContainer > button{
+    background-color: hsl(229, 57%, 11%);
+    border: none;
+    width: 2rem;
+    aspect-ratio: 1;
+    height: 1.5rem;
+    margin-right: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.progressbar{
+    width: 100%;
+    height: 1rem;
+    margin: 1.5rem 0;
+    background-color:hsl(229, 57%, 11%);
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 0.1rem;
+}
+
+.progressbar > .bar{
+    background-image: linear-gradient( 90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    width: 60%;
+    height:1rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.progressbar > .bar > .dot {
+    background-color: white;
+    height: 80%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    margin-right: 0.1rem;
+}
+
+.minmaxcontainer{
+    display: flex;
+    justify-content:space-between;
+}
+
+.msg {
+    position: absolute;
+    right: 1rem;
+    bottom: calc(100% - 1rem);
+    background-color: white;
+    color: hsl(229, 57%, 11%);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.8rem;
+    display: flex;
+    align-items:center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.msg > b{
+    font-size: 2.5em;
+}
+
+.triangle {
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid white;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    right: 1rem;
+    bottom: calc(100% - 2rem);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        background-image: url("../images/bg-mobile.png");
+        background-position: center;
+    }
+
+    .container > div {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left, .right {
+        width: 70vw;
+        padding: 2rem 1.5rem;
+        margin: 0.5rem;
+    }
+
+    .right {
+        border-top-right-radius: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .msg {
+        left: 50%;
+        top: calc(100% - 2rem);
+        bottom: -2rem;
+        transform: translateX(-50%);
+    }
+
+    .triangle {
+        display: none;
+    }
+}
